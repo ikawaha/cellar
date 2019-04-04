@@ -10,6 +10,8 @@ var _ = API("cellar", func() {
 	Description("A simple goa service")
 	Scheme("http")
 	Host("localhost:8080")
+
+	Produces("application/xml")
 })
 
 var _ = Resource("bottle", func() {
@@ -27,7 +29,7 @@ var _ = Resource("bottle", func() {
 	})
 })
 
-var BottleMedia = MediaType("application/vnd.goa.example.bottle+json", func() {
+var BottleMedia = MediaType("application/vnd.goa.example.bottle+xml", func() {
 	Description("A bottle of wine")
 	Attributes(func() {
 		Attribute("id", Integer, "Unique bottle ID")
